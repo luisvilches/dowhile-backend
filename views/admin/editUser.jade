@@ -1,0 +1,22 @@
+//layaout.jade
+extends layaout
+block content
+	section.bg
+		.container
+			.row
+				.col-md-12
+					.contenedoForm
+						h2 Editar usuario
+						form(action="/admin/app/user/id/#{user.id}?_method=put" method="post")
+							input(type="hidden" name="_method" value="put")
+							input(type="text" name="nombre" placeholder="Nombre Completo" class="form-control" value="#{user.nombre}")
+							br
+							input(type="text" name="username" placeholder="Nombre de usuario" class="form-control" value="#{user.username}")
+							br
+							input(type="password" name="password" placeholder="Password" class="form-control" value="#{user.password}")
+							br
+							input(type="email" name="correo" placeholder="Correo electronico" class="form-control" value="#{user.correo}")
+							br
+							input(type="file" name="image" class="form-control" enabled="false")
+							br
+							input(type="submit" value="Guardar" name="create" class="btn btn-primary btn-login btn-lg")

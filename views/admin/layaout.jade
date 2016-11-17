@@ -1,0 +1,82 @@
+// my-layout.jade
+doctype
+html(ng-app="dowhile")
+	head
+		title Dowhile Admin
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		title dowhile
+		link(rel="stylesheet" type="text/css" href="../css/bootstrap.min.css")
+		link(rel="stylesheet" type="text/css" href="../css/main.css")
+		link(rel="stylesheet" type="text/css" href="/css/bootstrap.min.css")
+		link(rel="stylesheet" type="text/css" href="/css/main.css")
+		script(src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous")  
+		script(type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js")
+	body
+		nav.navbar.navbar-default.navbar-fixed-top
+			.container-fluid
+				// Brand and toggle get grouped for better mobile display
+				.navbar-header
+					button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1', aria-expanded='false')
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.navbar-brand.logo-navbar(href='#') dowhile
+				// Collect the nav links, forms, and other content for toggling
+				#bs-example-navbar-collapse-1.collapse.navbar-collapse
+					ul.nav.navbar-nav.navbar-right
+						li.dropdown
+							a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+								| Dashboard
+								span.caret
+							ul.dropdown-menu
+								li
+									a(href='#')
+										span.glyphicon.glyphicon-collapse-up.leftIcon 
+										| Header
+								li
+									a(href='/admin/app/website')
+										span.glyphicon.glyphicon-briefcase.leftIcon
+										| Portafolio
+								li
+									a(href='#')
+										span.glyphicon.glyphicon-sunglasses.leftIcon
+										| Quienes Somos
+								li
+									a(href='#')
+										span.glyphicon.glyphicon-wrench.leftIcon
+										| Servicios
+								li
+									a(href='#')
+										span.glyphicon.glyphicon-collapse-down.leftIcon
+										|SS Footer
+						li.dropdown
+							a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+								| Elementos
+								span.caret
+							ul.dropdown-menu
+								li
+									a(href='#') Banners
+								li
+									a(href='#') Sliders
+								li
+									a(href='#') item
+								li
+									a(href='/admin/app/user') Usuarios
+						li
+							img.avatar(src="#{user.urlImage}")
+						li.dropdown
+							a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
+								| #{user.username} 
+								span.caret
+							ul.dropdown-menu
+								li
+									a(href='#') Perfil
+						li
+							a(href="/removeSession")
+								span.glyphicon.glyphicon-log-out
+		block content
+
+
+

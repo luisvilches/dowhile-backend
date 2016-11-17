@@ -1,0 +1,23 @@
+//layaout.jade
+extends layaout
+block content	
+	section
+			.container.top
+				.row
+					.col-md-12
+						.contenedoForm
+							h2 Editar Sitio Web 
+							form(action="/admin/app/website/edit/id/#{item.id}?_method=put" method="post")
+								input(type="hidden" name="_method" value="put")
+								input(type="text" name="name" placeholder="Nombre" class="form-control" value="#{item.nombre}")
+								br
+								input(type="text" name="url" placeholder="URL" class="form-control" value="#{item.url}")
+								br
+								textarea(name="description" placeholder="descripcion" class="form-control")
+									= item.description
+								br
+								img(src="#{item.urlImage}")
+								br
+								input(type="hidden" name="user_admin" value="#{user.username}" class="form-control")
+								br
+								input(type="submit" value="Actualizar" name="create" class="btn btn-primary btn-login btn-lg")

@@ -1,0 +1,25 @@
+doctype html
+html
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1")
+		title dowhile
+		link(rel="stylesheet" type="text/css" href="./css/bootstrap.min.css")
+		link(rel="stylesheet" type="text/css" href="./css/main.css")
+
+	body
+		section.bg
+			.container
+				.row
+					.col-md-12
+						.contenedoForm
+							h2.logo dowhile
+							p.adm ADMIN
+							p(class="textLogin text-center") Bienvenidos
+							form(action="/login" method="post")
+								input(type="text" name="correo" placeholder="Correo electronico" class="form-control")
+								br
+								input(type="password" name="password" placeholder="Password" class="form-control")
+								br
+								input(type="submit" value="Ingresar" name="send" class="btn btn-primary btn-login btn-lg")
+								a(class="copyRight") dowhile © 2015

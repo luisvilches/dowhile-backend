@@ -1,0 +1,63 @@
+//layaout.jade
+extends layaout
+block content
+	section
+		.container.top
+			.row
+				.col-md-12
+					h2 Administracion de Sitios Web en Portafolios
+					a.btn.btn-primary.pull-right.glyphicon.glyphicon-plus(href="#" type='button', data-toggle='modal', data-target='#myModal')
+					h2 Total de Sitios: #{website.length - 1} 
+			br
+			.row
+				.col-md-12
+					table.table.table-hover
+						thead
+							tr
+								th Thumbnail
+								th Nombre
+								th Fecha
+								th Admin
+								th Acciones
+						tbody
+							each item in website 
+								tr
+									td
+										//img.thumb(src="/img/tum.png")
+										img.thumbnail(src="#{item.urlImage}")
+									td= item.nombre	
+									td= item.date
+									td= item.user_admin
+									td
+										a.btn.btn-success(href="/admin/app/website/edit/#{item._id}") 
+											span.glyphicon.glyphicon-edit										
+										form.form-inline.delete(method="post", action="/admin/app/website/remove/#{item._id}?_method=delete" enctype="multipart/form-data")
+											input(type="hidden", name="_method", value="delete")
+											a.btn.btn-danger(href="javascript:void(0);", onclick="if(confirm('¿Está seguro que desea eliminar este registro?')){this.parentNode.submit();}")
+												span.glyphicon.glyphicon-remove
+								
+
+				// Modal
+				#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+					.modal-dialog(role='document')
+						.modal-content
+							.modal-header
+								button.close(type='button', data-dismiss='modal', aria-label='Close')
+									span(aria-hidden='true') ×
+								h4#myModalLabel.modal-title Nuevo Sitio Web
+							form(action="/admin/app/website" method="post" enctype="multipart/form-data")
+								.modal-body
+									input(type="text" name="name" placeholder="Nombre" class="form-control removeBorderRadius")
+									br
+									input(type="text" name="url" placeholder="URL" class="form-control removeBorderRadius")
+									br
+									textarea(name="description" placeholder="Descripcion" class="form-control removeBorderRadius")
+									br
+									input(type="file" name="fileImage")
+									br
+									input(type="hidden" name="user_admin" value="#{user.username}")
+								.modal-footer
+									input(type="submit" value="Crear" name="create" class="btn btn-primary btn-login btn-lg")
+
+
+
