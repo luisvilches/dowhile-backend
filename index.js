@@ -5,6 +5,7 @@ const path = require('path');
 const cors = require('cors');
 const cookieSession = require('cookie-session');
 const methodOverride = require('method-override');
+const nodemailer = require('nodemailer');
 const fs = require('fs');
 
 

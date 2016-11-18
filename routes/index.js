@@ -32,7 +32,7 @@ router.get('/removeSession', function(req,res){
 	res.redirect('/login');
 })
 
-
+router.post('/mail', controllers.mail.mail)
 ///////////// Usuarios ////////////
 
 router.get('/admin/app/user', controllers.users.render)
