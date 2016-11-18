@@ -16,11 +16,11 @@ var routes = require('./routes/index');
 var session = require('./middleware/session');
 
 var app = express();
-const develop = 'mongodb://localhost/develop';
-const produccion = '';
+const develop = 'mongodb://127.0.0.1/develop';
+const produccion = 'mongodb://dowhile.cl/develop';
 
 
-let db = develop;
+let db = produccion;
 
 
 let msg_server = "corriendo en el puerto: ";
