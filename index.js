@@ -16,14 +16,8 @@ var routes = require('./routes/index');
 var session = require('./middleware/session');
 
 var app = express();
-<<<<<<< HEAD
 const develop = 'mongodb://127.0.0.1/develop';
 const produccion = 'mongodb://dowhile.cl/develop';
-=======
-const develop = 'mongodb://localhost:27017/develop';
-const produccion = '';
->>>>>>> 97b9acbaa3181dcfd876e39077f3de588a634c62
-
 
 let db = produccion;
 
