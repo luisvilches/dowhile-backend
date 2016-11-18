@@ -40,6 +40,7 @@ router.get('/admin/app/user/:id', controllers.users.edit)
 router.delete('/admin/app/user/:id', controllers.users.delete)
 router.put('/admin/app/user/:id', controllers.users.editUser)
 router.post('/admin/app/user',upload.single('fileImage'), controllers.users.crearUsuario)
+router.get('/createsuperuser', controllers.users.createUserInit)
  
 
 ///////////// admin website ///////

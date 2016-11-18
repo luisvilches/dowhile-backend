@@ -69,3 +69,26 @@ exports.edit = (req,res,next)=>{
 		res.render('admin/editUser',{user: data});
 	})
 }
+
+
+exports.createUserInit = (req,res)=>{
+	let usuario = new User({
+
+
+		nombre: 'dowhile',
+		username: 'dowhile',
+		password: 'admin',
+		correo: 'admin@dowhile.cl',
+		urlImage: '',
+		date: new Date()
+	});
+
+	usuario.save((err, data) => {
+		if (err) {
+			console.log('ERROR: '+err);
+		}else{
+			console.log(data);
+			res.status(200);
+		};
+	});
+}
