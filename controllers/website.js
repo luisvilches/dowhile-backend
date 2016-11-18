@@ -36,7 +36,7 @@ exports.newWebsite = (req,res,next)=>{
 
 		res.status(200);
 		console.log(doc);
-		res.redirect('/admin/app/website');
+		res.redirect('http://dowhile.cl:4000/admin/app/website');
 
 	})
 }
@@ -46,7 +46,7 @@ exports.deleteWebsite = (req,res,next)=>{
       if(error){
          res.send('Error al intentar eliminar el sitio web.');
       }else{ 
-         res.redirect('/admin/app/website');
+         res.redirect('http://dowhile.cl:4000/admin/app/website');
       }
    });
 }
@@ -73,7 +73,7 @@ exports.editsave = (req,res,next)=>{
 	});
 
 	Website.update({_id: req.params.id},item,(doc) =>{
-		res.redirect('/admin/app/website');
+		res.redirect('http://dowhile.cl:4000/admin/app/website');
 		console.log(doc)
 	})	
 }
