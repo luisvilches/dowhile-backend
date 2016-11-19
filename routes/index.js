@@ -54,5 +54,21 @@ router.delete('/admin/app/website/remove/:id', controllers.website.deleteWebsite
 router.get('/admin/app/website/edit/:id', controllers.website.edit)
 router.put('/admin/app/website/edit/id/:id',controllers.website.editsave)
 
+///////////// admin header ///////////////////////////////////////////////
+
+router.get('/admin/app/header', controllers.header.render)
+router.get('/api/header', controllers.header.viewApiHeader)
+router.put('/admin/app/header/edit/:id', controllers.header.editsave)
+router.get('/admin/app/header/createCollection', controllers.header.collection)
+
+///////////// admin quienes somos ///////////////////////////////////////////////
+
+router.get('/admin/app/about', controllers.about.render)
+router.get('/api/about', controllers.about.viewApiHeader)
+router.put('/admin/app/about/edit/:id', controllers.about.editsave)
+router.get('/admin/app/about/createCollection', controllers.about.collection)
+
+
+
 
 module.exports = router;

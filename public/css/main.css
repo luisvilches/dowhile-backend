@@ -3,7 +3,7 @@
   src: url(../fonts/dowhile.ttf);
 }
 
-h2{color: #27D0B9}
+h2{color: #ff2145}
 .logo{
 	font-family: 'dowhile';
 	font-size: 90px;
@@ -72,7 +72,7 @@ h2{color: #27D0B9}
 }
 
 .navbar-default{
-	background: #ecf0f1;
+	background: #f8f8f8;
 }
 
 .leftIcon{
@@ -132,4 +132,20 @@ h2{color: #27D0B9}
 	position: relative;
 	top: 8px;
 	border:2px solid #fdfdfd;
+}
+
+.init{
+	height: 100vh;
+	width: 100%;
+	background-color: #432E41;
+}
+.principal{
+	margin-top: 40vh;
+	text-align: center;
+	font-size: 120px;
+	color: #fff;
+}
+
+.sangria{
+	margin-left: 20px;
 }

@@ -23,7 +23,7 @@ exports.crearUsuario = (req,res,next) => {
 		}else{
 			console.log(data);
 			res.status(200);
-			res.redirect('/admin/app/user');
+			res.redirect('http://dowhile.cl:4000/admin/app/user');
 		};
 	});
 }
@@ -41,7 +41,7 @@ exports.delete = (req,res,next)=>{
       if(error){
          res.send('Error al intentar eliminar el usuario.');
       }else{ 
-         res.redirect('/admin/app/user');
+         res.redirect('http://dowhile.cl:4000/admin/app/user');
       }
    });
 }
@@ -58,7 +58,7 @@ exports.editUser = (req,res,next)=>{
 	});
 
 	User.update({_id: req.params.id},item,(doc) =>{
-		res.redirect('/admin/app/user');
+		res.redirect('http://dowhile.cl:4000/admin/app/user');
 		console.log(doc)
 	})	
 }

@@ -14,7 +14,7 @@ exports.iniciarSesion = (req,res,next) => {
 		else{
 			req.session.user_id = user._id;
 			console.log(req.session.user_id);
-			res.redirect('/admin/app');
+			res.redirect('http://dowhile.cl:4000/admin/app');
 			//res.send('hola');
 		}
 	})

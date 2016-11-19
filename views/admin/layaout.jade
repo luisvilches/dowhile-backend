@@ -32,7 +32,7 @@ html(ng-app="dowhile")
 								span.caret
 							ul.dropdown-menu
 								li
-									a(href='#')
+									a(href='/admin/app/header')
 										span.glyphicon.glyphicon-collapse-up.leftIcon 
 										| Header
 								li
@@ -40,30 +40,30 @@ html(ng-app="dowhile")
 										span.glyphicon.glyphicon-briefcase.leftIcon
 										| Portafolio
 								li
-									a(href='#')
+									a(href='/admin/app/about')
 										span.glyphicon.glyphicon-sunglasses.leftIcon
 										| Quienes Somos
-								li
+								li(disabled)
 									a(href='#')
 										span.glyphicon.glyphicon-wrench.leftIcon
 										| Servicios
-								li
-									a(href='#')
-										span.glyphicon.glyphicon-collapse-down.leftIcon
-										|SS Footer
+								li(disabled)
+									a(href='/admin/app/user')
+										span.glyphicon.glyphicon-user.leftIcon
+										|Usuarios
 						li.dropdown
 							a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
 								| Elementos
 								span.caret
 							ul.dropdown-menu
 								li
-									a(href='#') Banners
+									a(href='#') items
 								li
-									a(href='#') Sliders
+									a(href='#') items
 								li
-									a(href='#') item
+									a(href='#') items
 								li
-									a(href='/admin/app/user') Usuarios
+									a(href='#') items
 						li
 							img.avatar(src="#{user.urlImage}")
 						li.dropdown
@@ -72,7 +72,7 @@ html(ng-app="dowhile")
 								span.caret
 							ul.dropdown-menu
 								li
-									a(href='#') Perfil
+									a(href='/admin/app/user/#{user._id}') Perfil
 						li
 							a(href="/removeSession")
 								span.glyphicon.glyphicon-log-out

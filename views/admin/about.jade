@@ -1,0 +1,27 @@
+//layaout.jade
+extends layaout
+block content
+	section
+		.container.top
+			.row
+				.col-md-12
+					h2 Administracion de Quienes somos 
+						br
+						br
+						form(action="/admin/app/about/edit/#{about.id}?_method=put" method="post")
+							input(type="hidden" name="_method" value="put")
+							h4 Titulo Principal
+							input(type="text" value="#{about.titulo}" name="titulo").form-control
+							br
+							h4 Pie de titulo
+							textarea(rows="3" name="texto").form-control
+								= about.texto
+							br
+							h4 Segundo parrafo
+							textarea(rows="3" name="parrafo").form-control
+								= about.parrafo
+							br
+							h6 Ultima actualizacion: #{about.date}      -  por #{about.user_admin}
+							input(type="hidden" value="#{user.username}" name="user_admin")
+							input(type="submit" value="Guardar").btn.btn-primary.btn-lg.pull-right.sangria
+							a(href="/").btn.btn-default.btn-lg.pull-right Cancelar

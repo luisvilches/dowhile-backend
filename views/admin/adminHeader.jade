@@ -1,0 +1,27 @@
+//layaout.jade
+extends layaout
+block content
+	section
+		.container.top
+			.row
+				.col-md-12
+					h2 Administracion del header 
+						br
+						br
+						form(action="/admin/app/header/edit/#{header.id}?_method=put" method="post")
+							input(type="hidden" name="_method" value="put")
+							h4 Titulo Principal
+							input(type="text" value="#{header.titulo}" name="titulo").form-control
+							br
+							h4 Pie de titulo
+							textarea(rows="10" name="texto").form-control
+								= header.texto
+							br
+							h4 Segundo parrafo
+							textarea(rows="3" name="parrafo").form-control
+								= header.parrafo
+							br
+							h6 Ultima actualizacion: #{header.date}      -  por #{header.user_admin}
+							input(type="hidden" value="#{user.username}" name="user_admin")
+							input(type="submit" value="Guardar").btn.btn-primary.btn-lg.pull-right.sangria
+							a(href="/").btn.btn-default.btn-lg.pull-right Cancelar
