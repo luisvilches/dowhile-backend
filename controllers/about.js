@@ -44,7 +44,7 @@ exports.editsave = (req,res,next)=>{
 	});
 
 	About.update({about:'about'},item,(doc) =>{
-		res.redirect('http://localhost:4000/admin/app/about');
+		res.redirect('http://dowhile.cl:4000/admin/app/about');
 		console.log(doc)
 		res.redirect('/')
 	})	

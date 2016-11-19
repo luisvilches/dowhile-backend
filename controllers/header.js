@@ -43,7 +43,7 @@ exports.editsave = (req,res,next)=>{
 	});
 
 	Header.update({tituloHome:'titulohome'},item,(doc) =>{
-		res.redirect('http://localhost:4000/admin/app/header');
+		res.redirect('http://dowhile.cl:4000/admin/app/header');
 		console.log(doc)
 		res.redirect('/')
 	})	
